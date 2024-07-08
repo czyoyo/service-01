@@ -1,5 +1,6 @@
 package com.example.service01.controller;
 
+import com.example.service01.client.Service02Client;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RequiredArgsConstructor
 public class UserController {
+
+    private final Service02Client service02Client;
 
 
 
@@ -37,6 +40,9 @@ public class UserController {
     @GetMapping("/interaction")
     public String service02() {
         log.info("service02 interaction is being called");
+
+
+
         return "service02";
     }
 
