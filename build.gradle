@@ -36,6 +36,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '4.1.2'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '3.3.1'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bootstrap', version: '4.1.3'
