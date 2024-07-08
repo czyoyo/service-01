@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
 
+
     @PostMapping("/login")
     public String login() {
         log.info("login is being called");
@@ -30,6 +31,13 @@ public class UserController {
     public String info() {
         log.info("info is being called");
         return "info";
+    }
+
+    // interaction with other services
+    @GetMapping("/interaction")
+    public String service02() {
+        log.info("service02 interaction is being called");
+        return "service02";
     }
 
 }
