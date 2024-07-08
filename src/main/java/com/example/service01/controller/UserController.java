@@ -16,8 +16,6 @@ public class UserController {
 
     private final Service02Client service02Client;
 
-
-
     @PostMapping("/login")
     public String login() {
         log.info("login is being called");
@@ -41,9 +39,7 @@ public class UserController {
     public String service02() {
         log.info("service02 interaction is being called");
 
-
-
-        return "service02";
+        return service02Client.getDummy();
     }
 
 }
