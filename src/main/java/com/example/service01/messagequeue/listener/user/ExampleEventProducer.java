@@ -1,5 +1,6 @@
 package com.example.service01.messagequeue.listener.user;
 
+import com.example.service01.dto.ExampleDto;
 import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class ExampleEventProducer {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, ExampleDto> kafkaDtoTemplate;
 
     public void send(String message) {
         log.info("Sending message: {}", message);
@@ -29,6 +31,11 @@ public class ExampleEventProducer {
                 log.info("Sent message: {}", message);
             }
         });
+    }
+
+    public void send(String topic, ExampleDto dto) {
+        log.info("Sending payload: {}, to topic: {}", dto, topic);
+        kafkaDtoTemplate.send(topic, dto);
     }
 
 
